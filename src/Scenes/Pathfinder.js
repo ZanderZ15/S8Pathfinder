@@ -136,7 +136,7 @@ class Pathfinder extends Phaser.Scene {
             }
 
         }
-        //console.log(grid[0]);
+        //console.log(grid);
 
         return grid;
     }
@@ -186,10 +186,27 @@ class Pathfinder extends Phaser.Scene {
 
     // A function which takes as input a tileset and then iterates through all
     // of the tiles in the tileset to retrieve the cost property, and then 
-    // uses the value of the cost property to inform EasyStar, using EasyStar's
+    // uses the value of the cost p     roperty to inform EasyStar, using EasyStar's
     // setTileCost(tileID, tileCost) function.
     setCost(tileset) {
+        
         // TODO: write this function
+        let tile_num = tileset.total;
+        console.log(tileset);
+        for (let i = tileset.firstgid; i != tile_num; i++) {
+            let prop = tileset.getTileProperties(i);
+            console.log(i, prop);
+            if (prop) {
+                this.finder.setTileCost(i, prop.cost)
+                //console.log(prop.cost);
+            } else {
+                console.log();
+            }
+            
+        }
+            
+
+
     }
 
 

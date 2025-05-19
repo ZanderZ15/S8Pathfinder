@@ -114,7 +114,7 @@
  "nextobjectid":1,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"1.10.2",
+ "tiledversion":"1.11.2",
  "tileheight":16,
  "tilesets":[
         {
@@ -272,6 +272,24 @@
                          "name":"cost",
                          "type":"int",
                          "value":2
+                        }]
+                }, 
+                {
+                 "id":43,
+                 "properties":[
+                        {
+                         "name":"cost",
+                         "type":"int",
+                         "value":1
+                        }]
+                }, 
+                {
+                 "id":131,
+                 "properties":[
+                        {
+                         "name":"hi",
+                         "type":"string",
+                         "value":"hi"
                         }]
                 }],
          "tilewidth":16
