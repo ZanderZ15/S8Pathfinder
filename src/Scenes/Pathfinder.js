@@ -192,10 +192,10 @@ class Pathfinder extends Phaser.Scene {
         
         // TODO: write this function
         let tile_num = tileset.total;
-        console.log(tileset);
+        //console.log(tileset);
         for (let i = tileset.firstgid; i != tile_num; i++) {
             let prop = tileset.getTileProperties(i);
-            console.log(i, prop);
+            //console.log(i, prop);
             if (prop) {
                 this.finder.setTileCost(i, prop.cost)
                 //console.log(prop.cost);
