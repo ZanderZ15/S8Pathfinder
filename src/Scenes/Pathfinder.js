@@ -102,11 +102,41 @@ class Pathfinder extends Phaser.Scene {
     // This array can then be given to Easystar for use in path finding.
     layersToGrid() {
         let grid = [];
+        let array_of_layers = this.map.layers;
+        
+
+        let width = this.map.width;
+        let height = this.map.height;
+        //console.log(width, height);
+
         // Initialize grid as two-dimensional array
-        // TODO: write initialization code
+        for (let i = 0; i < height; i++) {
+            grid.push([]);
+            for (let j = 0; j < width; j++) {
+                grid[i].push("");
+            }
+        }
+        //console.log(grid);
 
         // Loop over layers to find tile IDs, store in grid
-        // TODO: write this loop
+        for (let layer of array_of_layers) {
+            let tile;
+            for (let y = 0; y < height; y++) {
+                for (let x = 0; x < width; x++) {
+                    tile = layer.tilemapLayer.getTileAt(x,y);
+                    if (tile) {
+                        //console.log(x, y, tile.index);
+                        if (!grid[y][x]) {
+                            grid[y][x] = tile.index;
+                        }
+                    }
+                    
+                }
+
+            }
+
+        }
+        //console.log(grid[0]);
 
         return grid;
     }
